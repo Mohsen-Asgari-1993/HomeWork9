@@ -20,7 +20,7 @@ public class StudentDAOImpl extends BaseDAOImpl<Student> implements StudentDAO {
 
         Session session = factory.openSession();
         return session.createQuery(
-                "from Student s where s.firstName = '%" + firstName + "%'",
+                "from Student s where s.firstName like '%" + firstName + "%'",
                 Student.class).list();
     }
 
@@ -28,7 +28,7 @@ public class StudentDAOImpl extends BaseDAOImpl<Student> implements StudentDAO {
     public List<Student> searchByLastName(String lastName) {
         Session session = factory.openSession();
         return session.createQuery(
-                "from Student s where s.lastName = '%" + lastName + "%'",
+                "from Student s where s.lastName like '%" + lastName + "%'",
                 Student.class).list();
 
     }
