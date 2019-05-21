@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 public abstract class BaseDAOImpl<E extends Serializable> implements BaseDAO<E> {
 
-    private static SessionFactory factory;
+    protected static SessionFactory factory;
 
     public BaseDAOImpl(SessionFactory factory) {
         BaseDAOImpl.factory = factory;
