@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Check;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,7 +19,6 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class Teacher implements Serializable {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,13 +29,14 @@ public class Teacher implements Serializable {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "teacher_code", nullable = false)
+    @Column(name = "teacher_code", nullable = false, unique = true)
     private Long teacherCode;
 
     @Column(name = "birth_day")
     private LocalDate date;
 
     @Column(name = "salary")
+    @Check(constraints = "salary > 0")
     private Long salary;
 
 
