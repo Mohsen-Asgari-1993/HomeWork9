@@ -47,6 +47,6 @@ public class Teacher implements Serializable {
                 ", teacherCode=" + teacherCode +
                 ", date=" + date +
                 ", salary=" + salary +
-                '}';
+                '}' + "\n";
     }
 }
