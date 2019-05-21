@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface StudentDAO extends BaseDAO<Student> {
 
-    List<Student> searchByFirstName();
+    List<Student> searchByFirstName(String firstName);
 
-    List<Student> searchByLastName();
+    List<Student> searchByLastName(String lastName);
 
 }
