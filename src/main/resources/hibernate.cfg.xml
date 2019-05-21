@@ -10,6 +10,7 @@
         <property name="connection.password"></property>
         <property name="dialect">org.hibernate.dialect.MariaDB103Dialect</property>
         <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">create</property>
         <mapping class="com.maktab.domain.Teacher"></mapping>
         <mapping class="com.maktab.domain.Student"></mapping>
