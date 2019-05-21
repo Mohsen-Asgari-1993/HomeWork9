@@ -39,5 +39,14 @@ public class Teacher implements Serializable {
     @Check(constraints = "salary > 0")
     private Long salary;
 
-
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", teacherCode=" + teacherCode +
+                ", date=" + date +
+                ", salary=" + salary +
+                '}';
+    }
 }
