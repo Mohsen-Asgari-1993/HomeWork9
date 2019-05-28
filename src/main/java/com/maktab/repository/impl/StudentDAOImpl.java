@@ -37,8 +37,8 @@ public class StudentDAOImpl extends BaseDAOImpl<Student> implements StudentDAO {
     public List<Student> findAllByCity(String city) {
         Session session = factory.openSession();
 
-        List<Student> list = session.createQuery("from Student s where s.address.city is NOT '" + city + "'"
-                , Student.class).list();
+        List<Student> list = session.createQuery("from Student s where not s.address.city = ?1"
+                , Student.class).setParameter(1, city).list();
         return list;
     }
 

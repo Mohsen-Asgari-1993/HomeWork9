@@ -75,7 +75,7 @@ public class TeacherDAOImpl extends BaseDAOImpl<Teacher> implements TeacherDAO {
     public List<Teacher> findAllByNumberStarts(String number) {
         Session session = factory.openSession();
 
-        List<Teacher> list = session.createQuery("from Teacher  t where t.address.number = '" + number + "%'"
+        List<Teacher> list = session.createQuery("from Teacher t where t.address.number  like '" + number + "%'"
                 , Teacher.class).list();
         return list;
     }
@@ -84,9 +84,12 @@ public class TeacherDAOImpl extends BaseDAOImpl<Teacher> implements TeacherDAO {
     public List<Teacher> findAllByNumberAndCity(String city, String number) {
         Session session = factory.openSession();
 
-        List<Teacher> list = session.createQuery("from Teacher  t where t.address.city = ?1 " +
-                        "and t.address.number is Like '" + number + "@'"
-                , Teacher.class).setParameter(1, city).list();
+        List<Teacher> list = session.createQuery("from Teacher t where t.address.number like :number and t.address.city " +
+                        "like :city"
+                , Teacher.class)
+                .setParameter("city", city)
+                .setParameter("number", number + "%")
+                .list();
 
         return list;
     }
