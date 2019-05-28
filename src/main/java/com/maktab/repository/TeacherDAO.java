@@ -16,8 +16,8 @@ public interface TeacherDAO extends BaseDAO<Teacher> {
 
     List<Teacher> findAllByCity(String city);
 
-    List<Teacher> findAllByNumberStarts(Long number);
+    List<Teacher> findAllByNumberStarts(String number);
 
-    List<Teacher> findAllByNumberAndCity(String city, Long number);
+    List<Teacher> findAllByNumberAndCity(String city, String number);
 
 }
