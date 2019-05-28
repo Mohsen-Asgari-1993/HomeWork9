@@ -26,7 +26,7 @@ public class Student implements Serializable {
     @Column(name = "last_name")
     private String lastName;
 
-    @OneToOne(mappedBy = "studnet")
+    @OneToOne(mappedBy = "student")
     private Address address;
 
     @Override
