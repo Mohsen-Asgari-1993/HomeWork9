@@ -30,7 +30,7 @@ public class Address implements Serializable {
     @Column(name = "postal_code")
     private String postalCode;
 
-    @Column(name = "number")
+    @Column(name = "number", nullable = false, unique = true)
     private Long number;
 
     @OneToOne
