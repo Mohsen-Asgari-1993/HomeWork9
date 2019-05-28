@@ -1,6 +1,9 @@
 package com.maktab.domain;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,7 +14,6 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class Address implements Serializable {
 
     @Id
@@ -41,4 +43,14 @@ public class Address implements Serializable {
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
 
+    @Override
+    public String toString() {
+        return "Address{" +
+                "city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", postalAddress='" + postalAddress + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", number='" + number + '\'' +
+                '}';
+    }
 }

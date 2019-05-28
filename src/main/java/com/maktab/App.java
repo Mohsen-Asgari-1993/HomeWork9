@@ -29,13 +29,15 @@ public class App {
 //        studentDAO.create(new Student(0L, "ali", "alavi"));
 
 
-        System.out.println();
-        System.out.println(studentDAO.searchByFirstName("agh"));
-        System.out.println();
+//        System.out.println();
+//        System.out.println(studentDAO.searchByFirstName("agh"));
+//        System.out.println();
+//
+//        System.out.println(teacherDAOImpl.showMinAndMaxSalary());
+//        System.out.println();
+//
+//        System.out.println(teacherDAOImpl.showOldAndYoung());
 
-        System.out.println(teacherDAOImpl.showMinAndMaxSalary());
-        System.out.println();
-
-        System.out.println(teacherDAOImpl.showOldAndYoung());
+        System.out.println(teacherDAOImpl.findAllByCity("Tehran"));
     }
 }

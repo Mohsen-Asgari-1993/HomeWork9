@@ -34,6 +34,8 @@ public class Student implements Serializable {
         return "Student{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                '}' + "\n";
+                '}' + "\n"
+                + "Address= " + address
+                + "\n";
     }
 }
