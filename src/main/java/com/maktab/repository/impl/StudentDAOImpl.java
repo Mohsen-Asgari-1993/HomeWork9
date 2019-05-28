@@ -34,6 +34,15 @@ public class StudentDAOImpl extends BaseDAOImpl<Student> implements StudentDAO {
     }
 
     @Override
+    public List<Student> findAllByCity(String city) {
+        Session session = factory.openSession();
+
+        List<Student> list = session.createQuery("from Student s where s.address.city is NOT '" + city + "'"
+                , Student.class).list();
+        return list;
+    }
+
+    @Override
     protected String getEntityName() {
         return ENTITY_NAME;
     }
