@@ -7,7 +7,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class StreamTest {
-
+    public static void main(String[] args) {
+        System.out.println(sortArrayByStream(initArray()));
+    }
 
     private static String[] initArray() {
         String[] strings = {"Amir", "Hatef", "Mehran", "Mojtaba", "Mohammad", "Ali",
