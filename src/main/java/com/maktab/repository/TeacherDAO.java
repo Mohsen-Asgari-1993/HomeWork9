@@ -14,4 +14,10 @@ public interface TeacherDAO extends BaseDAO<Teacher> {
 
     List<Teacher> showMinAndMaxSalary();
 
+    List<Teacher> findAllByCity(String city);
+
+    List<Teacher> findAllByNumberStarts(Long number);
+
+    List<Teacher> findAllByNumberAndCity(String city, Long number);
+
 }
