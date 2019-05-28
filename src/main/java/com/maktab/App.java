@@ -38,6 +38,14 @@ public class App {
 //
 //        System.out.println(teacherDAOImpl.showOldAndYoung());
 
-        System.out.println(teacherDAOImpl.findAllByCity("Tehran"));
+//        System.out.println(teacherDAOImpl.findAllByCity("Tehran"));
+
+        System.out.println(teacherDAOImpl.findAllByNumberAndCity("Tehran", "0912"));
+
+//        System.out.println(teacherDAOImpl.findAllByNumberStarts("0912"));
+
+//        System.out.println(studentDAO.findAllByCity("Tehran"));
+
+
     }
 }
