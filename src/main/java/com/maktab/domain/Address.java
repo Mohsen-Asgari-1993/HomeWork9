@@ -31,7 +31,7 @@ public class Address implements Serializable {
     private String postalCode;
 
     @Column(name = "number", nullable = false, unique = true)
-    private Long number;
+    private String number;
 
     @OneToOne
     @JoinColumn(name = "student_id")
