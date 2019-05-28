@@ -33,11 +33,11 @@ public class Address implements Serializable {
     @Column(name = "number", nullable = false, unique = true)
     private String number;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_id")
     private Student student;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
 
