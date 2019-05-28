@@ -63,6 +63,35 @@ public class TeacherDAOImpl extends BaseDAOImpl<Teacher> implements TeacherDAO {
     }
 
     @Override
+    public List<Teacher> findAllByCity(String city) {
+        Session session = factory.openSession();
+
+        List<Teacher> list = session.createQuery("from Teacher t where t.address.city = ?1", Teacher.class)
+                .setParameter(1, city).list();
+        return list;
+    }
+
+    @Override
+    public List<Teacher> findAllByNumberStarts(String number) {
+        Session session = factory.openSession();
+
+        List<Teacher> list = session.createQuery("from Teacher  t where t.address.number = '" + number + "%'"
+                , Teacher.class).list();
+        return list;
+    }
+
+    @Override
+    public List<Teacher> findAllByNumberAndCity(String city, String number) {
+        Session session = factory.openSession();
+
+        List<Teacher> list = session.createQuery("from Teacher  t where t.address.city = ?1 " +
+                        "and t.address.number is Like '" + number + "@'"
+                , Teacher.class).setParameter(1, city).list();
+
+        return list;
+    }
+
+    @Override
     protected String getEntityName() {
         return ENTITY_NAME;
     }
