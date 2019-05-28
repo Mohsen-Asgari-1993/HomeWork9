@@ -33,5 +33,12 @@ public class Address implements Serializable {
     @Column(name = "number")
     private Long number;
 
+    @OneToOne
+    @JoinColumn(name = "student_id")
+    private Student student;
+
+    @OneToOne
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
 
 }
