@@ -12,15 +12,20 @@ public class StreamTest {
     }
 
     private static String[] initArray() {
-        String[] strings = {"Amir", "Hatef", "Mehran", "Mojtaba", "Mohammad", "Ali",
+        String[] strings = {"Amir", "Hatef", "Mehran", "Mojtaba", "Mohammad", "Ali", "sam",
                 "Davood", "Reza", "Mohsen"};
         return strings;
     }
 
-    private static Map<Integer, List<String>> sortArrayByStream(String[] strings) {
-        Map<Integer, List<String>> map = Arrays.stream(strings).sorted(Comparator.comparingInt(String::length))
-                .collect(Collectors.groupingBy(String::length));
-        return map;
+    private static Map<Integer, List<Map.Entry<Integer, List<String>>>> sortArrayByStream(String[] strings) {
+
+
+        Map<Integer, List<Map.Entry<Integer, List<String>>>> collect =
+                Arrays.stream(strings).sorted(Comparator.comparingInt(String::length))
+                        .collect(Collectors.groupingBy(String::length))
+                        .entrySet().stream().collect(Collectors.groupingBy(o -> o.getValue().size()));
+
+        return collect;
     }
 
 }
