@@ -39,6 +39,9 @@ public class Teacher implements Serializable {
     @Check(constraints = "salary > 0")
     private Long salary;
 
+    @OneToOne(mappedBy = "teacher")
+    private Address address;
+
     @Override
     public String toString() {
         return "Teacher{" +
